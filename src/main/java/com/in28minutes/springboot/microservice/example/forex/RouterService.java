@@ -23,7 +23,7 @@ public class RouterService {
 	 // @Autowired
 	 // private CurrencyExchangeServiceProxy proxy;
 	
-	  @CrossOrigin(origins = "http://localhost:8002")
+	  @CrossOrigin(origins = "http://localhost:8080")
 	  @GetMapping("/getExchangeRates")
 	  public Object[] retrieveExchangeValue(){
 	    
@@ -38,7 +38,7 @@ public class RouterService {
 		  
 		  
 			  ResponseEntity<Object[]> responseEntity = new RestTemplate().exchange(
-	        "http://localhost:8000/currency-exchange/getList",  HttpMethod.GET, null, new ParameterizedTypeReference<Object[]>() {
+	        "http://forex-service.kursna-lista.svc:8080/currency-exchange/getList",  HttpMethod.GET, null, new ParameterizedTypeReference<Object[]>() {
           });
 		 
 			  Object[] response =  responseEntity.getBody();
