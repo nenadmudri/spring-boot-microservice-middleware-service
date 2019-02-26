@@ -23,7 +23,7 @@ public class RouterService {
 	 // @Autowired
 	 // private CurrencyExchangeServiceProxy proxy;
 	
-	  @CrossOrigin(origins = "http://middleware-kursna-lista.router.default.svc.cluster.local")
+	  @CrossOrigin(origins = *)
 	  @GetMapping("/getExchangeRates")
 	  public Object[] retrieveExchangeValue(){
 	    
