@@ -23,7 +23,7 @@ public class RouterService {
 	 // @Autowired
 	 // private CurrencyExchangeServiceProxy proxy;
 	
-	  @CrossOrigin(origins = *)
+	  @CrossOrigin(origins = "*")
 	  @GetMapping("/getExchangeRates")
 	  public Object[] retrieveExchangeValue(){
 	    
