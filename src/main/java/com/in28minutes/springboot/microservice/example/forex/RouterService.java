@@ -68,7 +68,7 @@ public class RouterService {
 		
 		  
 			  ResponseEntity<BigDecimal> responseEntity = new RestTemplate().exchange(
-	        "http://urrency-converter.kursna-lista.svc:8080/currency-converter/from/{from}/to/{to}/quantity/{quantity}",  HttpMethod.GET, null, BigDecimal.class, uriVariables);
+	        "http://currency-converter.kursna-lista.svc:8080/currency-converter/from/{from}/to/{to}/quantity/{quantity}",  HttpMethod.GET, null, BigDecimal.class, uriVariables);
 		 
 			  BigDecimal response =  responseEntity.getBody();
 		  
