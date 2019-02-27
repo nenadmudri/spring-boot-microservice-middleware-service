@@ -48,5 +48,36 @@ public class RouterService {
 	    
 	    
 	  }
+	
+	  @CrossOrigin(origins = "*")
+	  @GetMapping("/getCurrencyConversion/from/{from}/to/{to}/quantity/{quantity}")
+	  public BigDecimal getCurrencyConversion
+	  (@PathVariable String from, @PathVariable String to,
+      @PathVariable BigDecimal quantity) {
+	    
+		  
+		    Map<String, String> uriVariables = new HashMap<>();
+		    uriVariables.put("from", from);
+		    uriVariables.put("to", to);
+		    uriVariables.put("quantity", quantity.toString());
+		    
+		
+		  
+			  ResponseEntity<BigDecimal> responseEntity = new RestTemplate().exchange(
+	        "http://urrency-converter.kursna-lista.svc:8080/currency-converter/from/{from}/to/{to}/quantity/{quantity}",  HttpMethod.GET, null, BigDecimal.class, uriVariables);
+		 
+			  BigDecimal response =  responseEntity.getBody();
+		  
+	    System.out.println("Rez:"+response.toString());
+	    return response;
+	    
+	    
+	  }
+	  
+	
+	
+	
+	
+	
 
 }
